@@ -13,7 +13,9 @@ class Timer
 {
 public:
 	//単位の種類
-	enum tUnit { sec, millisec, microsec, nanosec };
+	static enum tUnit { sec, millisec, microsec, nanosec };
+	//単位の名前を返す
+	static string unitname(tUnit unit);
 
 private:
 	//長いので型を短く定義
@@ -22,9 +24,6 @@ private:
 	//計測開始点，中間点を格納する
 	vector<_time>	rawLap;
 	vector<int>	lapTime;
-
-	//単位の名前を返す
-	string unitname( tUnit unit);
 
 	//指定した単位で時間を返す
 	int getTime(_time start, _time end, tUnit unit);
